@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 
-function loginButton() {
+function LoginButton() {
 
 
     const {
@@ -25,4 +25,4 @@ function loginButton() {
      );
 }
 
-export default loginButton;
+export default LoginButton;

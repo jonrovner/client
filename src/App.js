@@ -1,5 +1,6 @@
 import logo from './logo.png';
 import './App.css';
+import LoginButton from './login';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <p>
          Site under construction
         </p>
-        
+        <LoginButton/>
       </header>
     </div>
   );
