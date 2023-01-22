@@ -1,10 +1,7 @@
-
 import { useAuth0 } from "@auth0/auth0-react";
 
 
-
 function LoginButton() {
-
 
     const {
         user,
@@ -17,10 +14,19 @@ function LoginButton() {
       logout({
         returnTo: window.location.origin,
       });
+      
+      
+      console.log("user is ", user)
+      console.log("isAuthenticated is ", isAuthenticated)
+
+
 
     return ( 
         <>
-        <button onClick={() => loginWithRedirect()}>login</button>
+        
+        {!isAuthenticated && <button onClick={() => loginWithRedirect()}>login</button>}
+        {isAuthenticated && <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>logout</button>
+        }
         </>
      );
 }
