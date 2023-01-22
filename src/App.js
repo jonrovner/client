@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="" alt="logo" />
         <p>
-         Jonathan Rovner
+        Rovner Solutions
         </p>
         <p>
          Site under construction
