@@ -1,6 +1,7 @@
 import logo from './logo.png';
 import './App.css';
 import LoginButton from './login';
+import Profile from './profile';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
          Site under construction
         </p>
         <LoginButton/>
+        <Profile />
       </header>
     </div>
   );
