@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Menú Semanal</title>
+</head>
+<body>
+    <div class="meal-container">
+        <h2>Menú Semanal</h2>
+        <div class="row">
+        
+            <div class="column"><label for="monday-lunch">Monday Lunch</label><textarea rows="5" cols="33" id="monday-lunch"></textarea></div>
+            <div class="column"><label for="monday-lunch">Monday Dinner</label><textarea rows="5" cols="33" id="monday-dinner"></textarea></div>
+        </div>
+        <div class="row">
+            <div class="column"><label for="tuesday-lunch">Tuesday Lunch</label><textarea rows="5" cols="33" id="tuesday-lunch"></textarea></div>
+            <div class="column"><label for="tuesday-dinner">Tuesday Dinner</label><textarea rows="5" cols="33" id="tuesday-dinner"></textarea></div>
+        </div>
+        <div class="row">
+            <div class="column"><label for="wednesday-lunch">Wednesday Lunch</label><textarea rows="5" cols="33" id="wednesday-lunch" ></textarea></div>
+            <div class="column"><label for="wednesday-dinner">Wednesday Dinner</label><textarea rows="5" cols="33" id="wednesday-dinner" ></textarea></div>
+        </div>        
+        <div class="row">
+            <div class="column"><label for="thursday-lunch">Thursday Lunch</label><textarea rows="5" cols="33" id="thursday-lunch" ></textarea></div>
+            <div class="column"><label for="thursday-dinner">Thursday Dinner</label><textarea rows="5" cols="33" id="thursday-dinner" ></textarea></div>
+        </div>
+        <div class="row">
+            <div class="column"><label for="friday-lunch">Friday Lunch</label><textarea rows="5" cols="33" id="friday-lunch" ></textarea></div>
+            <div class="column"><label for="friday-dinner">Friday Dinner</label><textarea rows="5" cols="33" id="friday-dinner"></textarea></div>
+        </div>
+        <div class="row">
+            <div class="column"><label for="saturday-lunch">Saturday Lunch</label><textarea rows="5" cols="33" id="saturday-lunch"></textarea></div>
+            <div class="column"><label for="saturday-dinner">Saturday Dinner</label><textarea rows="5" cols="33" id="saturday-dinner" ></textarea></div>
+        </div>
+
+        <div class="row">
+
+            <div class="column"><label for="sunday-lunch">Sunday Lunch</label><textarea rows="5" cols="33" id="sunday-lunch" ></textarea></div>
+            <div class="column"><label for="sunday-dinner">Sunday Dinner</label><textarea rows="5" cols="33" id="sunday-dinner" ></textarea></div>
+        </div>
+      
+        
+      </div>
+    </div>
+    
+    <script>
+    
+            const inputs = document.querySelectorAll('textarea')
+
+            const addToStorage = (text, id) => {
+                localStorage.setItem(text, id)
+
+            }
+
+            const getFromStore = () => {
+                inputs.forEach( input => {
+                    const item = localStorage.getItem(input.id)
+
+                    if (item){
+                        input.value = item 
+                    }
+                })
+            }
+
+            inputs.forEach(element => element.addEventListener('change', (e)=> {
+                addToStorage(element.id, e.target.value)
+            }))
+            window.addEventListener('load', getFromStore())
+
+    </script>
+</body>
+</html>
+

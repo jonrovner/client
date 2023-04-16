@@ -2,9 +2,26 @@ import logo from './logo.png';
 import './App.css';
 import LoginButton from './login';
 import Profile from './profile';
+import MenuSemanal from './menusemanal';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
 
 function App() {
   return (
+  <Router>
+    <Routes>
+      <Route path="/menusemanal" element={<MenuSemanal />}></Route>
+        
+
+    </Routes>
+    
+          
+          
+        
     <div className="App">
       <header className="App-header">
         <img src={logo} className="" alt="logo" />
@@ -15,7 +32,10 @@ function App() {
         <LoginButton/>
         <Profile />
       </header>
-    </div>
+    </div> 
+     
+     </Router>
+    
   );
 }
 
