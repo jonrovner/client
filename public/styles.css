@@ -10,35 +10,48 @@
   .row {
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
   }
   
   .column {
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
-    margin: 5px;
-    padding-bottom: 3rem;
+    margin: 1.5rem;
+    padding-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
+    align-content: center;
+    align-items: center;
   }
-  
+  h2 {
+    margin-bottom: 3rem;
+  }
   label {
-    border: 1px solid gray;
+    
+    padding: .5rem;
     display: block;
     margin-bottom: 5px;
     color: lightslategray;
     font-size: smaller;
+    font-weight: 800;
   }
   
   textarea {
-    
-    width: 90%;
+    padding-top: 1.75rem;
+    width: 95%;
     border: none;
     outline: none;
-    font-size: .75rem;
-    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-family: luminary, fantasy;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color:darkblue;
+    text-align: center;
+    line-height: 1.5rem;
+    border-radius: 5px;
   }
   
   input:focus {
