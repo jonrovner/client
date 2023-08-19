@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import LoginButton from './login';
+
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
@@ -39,16 +39,14 @@ const Profile = () => {
     return (
       isAuthenticated && (
         <div>
-          <h1>Hola</h1>
-         
-          <p>your ID token will expire on {expiration}</p>
-          <p>your latest login was on {new Date(user.updated_at).toLocaleTimeString()}</p>
+        <p>your ID token will expire on {expiration}</p>
+          <p>your latest login was on {user.updated_at}</p>
           <img src={user.picture} alt={user.name} />
           <h2>{user.name}</h2>
           <p>{user.email}</p>
           <button onClick={()=> getToken()}>token</button>
-          <LoginButton />
           
+            
         </div>
       )
     );

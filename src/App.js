@@ -3,6 +3,8 @@ import './App.css';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 
 import Profile from './profile';
+import Home from './home';
+import LoginButton from './login';
 
 import {
   BrowserRouter,
@@ -35,36 +37,31 @@ function App() {
       <div className="App">
 
         <BrowserRouter>
-        <Auth0ProviderWithRedirectCallback
-          domain="dev-jrovner.us.auth0.com"
-          clientId="YCRUG9Z7TmakswUOi3ZhEC045DYZs8l1"
-          authorizationParams={{
-            redirect_uri: window.location.origin,
-            //audience: 'https://expenses-api', // Value in Identifier field for the API being called.
-            scope: 'openid profile email read:reports', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
-                
-          }}
-        >
-          <div>
-
-              <img src={logo} className="" alt="logo" height="55vh"/>
+          <Auth0ProviderWithRedirectCallback
+            domain="dev-jrovner.us.auth0.com"
+            clientId="YCRUG9Z7TmakswUOi3ZhEC045DYZs8l1"
+            authorizationParams={{
+              redirect_uri: window.location.origin,
+              //audience: 'https://expenses-api', // Value in Identifier field for the API being called.
+              scope: 'openid profile email read:reports', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
+                  
+            }}
+          >
+              <div>
+                  <img src={logo} className="" alt="logo" height="55vh"/>
+                  <p>
+                  This is Single Page Application with Auth0 authentication
+                  </p>
+              </div>
               
-              <p>
-              This is Single Page Application with Auth0 authentication
-              </p>
+            <Routes>
 
-          </div>
-          
-        <Routes>
-          <Route path="/" element={<ProtectedRoute component={Profile} />} />
-          
-          <Route
-            path="/profile"
-            element={<ProtectedRoute component={Profile} />}
-          />
-          
-        </Routes>
-      </Auth0ProviderWithRedirectCallback>
+              <Route path="/" element={<Home/> } />
+              <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
+              
+            </Routes>
+            <LoginButton />
+         </Auth0ProviderWithRedirectCallback>
     </BrowserRouter>
     </div> 
      
