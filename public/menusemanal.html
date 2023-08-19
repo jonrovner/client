@@ -9,10 +9,16 @@
 </head>
 <body>
     <div class="meal-container">
-        <h2>Menú Semanal</h2>
-        <div class="row">
+        <h2>hola
         
-            <div class="column"><label for="monday-lunch">Monday Lunch</label><textarea rows="5" cols="33" id="monday-lunch"></textarea></div>
+        </h2>
+        <div class="principals">
+
+        </div>
+    
+        <div class="row">
+    
+            <div class=""><label for="monday-lunch">Monday Lunch</label><textarea draggable="true" rows="5" cols="33" id="monday-lunch"></textarea></div>
             <div class="column"><label for="monday-lunch">Monday Dinner</label><textarea rows="5" cols="33" id="monday-dinner"></textarea></div>
         </div>
         <div class="row">
@@ -47,6 +53,8 @@
     </div>
     
     <script>
+
+            let targetDiv = ""
     
             const inputs = document.querySelectorAll('textarea')
 
@@ -65,10 +73,51 @@
                 })
             }
 
-            inputs.forEach(element => element.addEventListener('change', (e)=> {
-                addToStorage(element.id, e.target.value)
-            }))
+            inputs.forEach(element => {
+                element.addEventListener('change', (e) => addToStorage(element.id, e.target.value))
+                element.addEventListener('drop', (e) => {console.log("drop", e)})
+            })
+
             window.addEventListener('load', getFromStore())
+
+
+            const firstList = ["carne", "pollo", "mila", "hamburguesa"]
+            const firstListElement = document.querySelector(".principals")
+            
+            firstList.forEach( e => {
+                const item = document.createElement("div")
+                item.innerText = e
+                item.draggable = true
+                item.classList.add("dragging")
+                item.addEventListener('dragstart', (event) => onDragStart(event))
+                item.addEventListener('drop', (event) => {
+                    onDrop(e)
+                   })
+
+                firstListElement.appendChild(item)
+
+            })
+
+            const onDrop = (e) => {
+                console.log("drop from source");
+                e.stopPropagation();
+                
+                let data = e.dataTransfer.getData('text/html');
+                console.log("data is ", data);
+                const element = document.getElementById(targetDiv) 
+                console.log(element);
+
+
+            }
+
+            const onDragStart = (e) => {
+                console.log("this is ", this);
+                console.log("starting drag : ", e.target.innerText);
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+            }
+
+
 
     </script>
 </body>

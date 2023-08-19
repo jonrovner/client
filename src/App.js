@@ -1,40 +1,74 @@
 import logo from './logo.png';
 import './App.css';
-import LoginButton from './login';
+import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
+
 import Profile from './profile';
-import MenuSemanal from './menusemanal';
+
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
-  
+  useNavigate
 } from "react-router-dom";
+
+const ProtectedRoute = ({ component, ...args }) => {
+  const Component = withAuthenticationRequired(component, args);
+  return <Component />;
+};
+
+const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
+  const navigate = useNavigate();
+  const onRedirectCallback = (appState) => {
+    navigate((appState && appState.returnTo) || window.location.pathname);
+  };
+
+
+  return (
+    <Auth0Provider onRedirectCallback={onRedirectCallback} {...props}>
+      {children}
+    </Auth0Provider>
+  );
+};
 
 function App() {
   return (
-  <Router>
-    <Routes>
-      <Route path="/menusemanal" element={<MenuSemanal />}></Route>
-        
+      <div className="App">
 
-    </Routes>
-    
+        <BrowserRouter>
+        <Auth0ProviderWithRedirectCallback
+          domain="dev-jrovner.us.auth0.com"
+          clientId="YCRUG9Z7TmakswUOi3ZhEC045DYZs8l1"
+          authorizationParams={{
+            redirect_uri: window.location.origin,
+            //audience: 'https://expenses-api', // Value in Identifier field for the API being called.
+            scope: 'openid profile email read:reports', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
+                
+          }}
+        >
+          <div>
+
+              <img src={logo} className="" alt="logo" height="55vh"/>
+              
+              <p>
+              This is Single Page Application with Auth0 authentication
+              </p>
+
+          </div>
           
+        <Routes>
+          <Route path="/" element={<ProtectedRoute component={Profile} />} />
           
-        
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="" alt="logo" />
-        
-        <p>
-         Site under construction
-        </p>
-        <LoginButton/>
-        <Profile />
-      </header>
+          <Route
+            path="/profile"
+            element={<ProtectedRoute component={Profile} />}
+          />
+          
+        </Routes>
+      </Auth0ProviderWithRedirectCallback>
+    </BrowserRouter>
     </div> 
      
-     </Router>
+     
     
   );
 }
