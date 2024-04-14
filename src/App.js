@@ -1,10 +1,11 @@
-import logo from './logo.png';
+
 import './App.css';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 
 import Profile from './profile';
 import Home from './home';
 import LoginButton from './login';
+import Header from './header';
 
 import {
   BrowserRouter,
@@ -45,15 +46,8 @@ function App() {
               //audience: 'https://expenses-api', // Value in Identifier field for the API being called.
               scope: 'openid profile email read:reports', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
                   
-            }}
-          >
-              <div>
-                  <img src={logo} className="" alt="logo" height="55vh"/>
-                  <p>
-                  This is Single Page Application with Auth0 authentication
-                  </p>
-              </div>
-              
+            }}>   
+            <Header />   
             <Routes>
 
               <Route path="/" element={<Home/> } />
