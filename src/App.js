@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Auth0ProviderWithRedirectCallback
-            domain="dev-jrovner.us.auth0.com"
+            domain="rovner.dse.ninja"
             clientId="YCRUG9Z7TmakswUOi3ZhEC045DYZs8l1"
             authorizationParams={{
               redirect_uri: window.location.origin,
