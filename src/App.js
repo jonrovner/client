@@ -24,8 +24,6 @@ const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
   const onRedirectCallback = (appState) => {
     navigate((appState && appState.returnTo) || window.location.pathname);
   };
-
-
   return (
     <Auth0Provider onRedirectCallback={onRedirectCallback} {...props}>
       {children}
@@ -35,10 +33,9 @@ const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
 
 function App() {
   return (
-      <div className="App">
-
-        <BrowserRouter>
-          <Auth0ProviderWithRedirectCallback
+    <div className="App">
+      <BrowserRouter>
+        <Auth0ProviderWithRedirectCallback
             domain="dev-jrovner.us.auth0.com"
             clientId="YCRUG9Z7TmakswUOi3ZhEC045DYZs8l1"
             authorizationParams={{
@@ -48,6 +45,7 @@ function App() {
                   
             }}>   
             <Header />   
+            <h1>hola</h1>
             <Routes>
 
               <Route path="/" element={<Home/> } />
@@ -55,12 +53,9 @@ function App() {
               
             </Routes>
             <LoginButton />
-         </Auth0ProviderWithRedirectCallback>
-    </BrowserRouter>
+        </Auth0ProviderWithRedirectCallback>
+      </BrowserRouter>
     </div> 
-     
-     
-    
   );
 }
 
