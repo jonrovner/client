@@ -45,7 +45,7 @@ function App() {
                   
             }}>   
             <Header />   
-            <h1>hola</h1>
+            
             <Routes>
 
               <Route path="/" element={<Home/> } />

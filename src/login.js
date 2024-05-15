@@ -13,7 +13,7 @@ function LoginButton() {
     return ( 
         <>
         
-        {!isAuthenticated && <button onClick={() => loginWithRedirect()}>login</button>}
+        {!isAuthenticated && <button onClick={() => loginWithRedirect()}>log in</button>}
         {isAuthenticated && <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>logout</button>
         }
         </>
