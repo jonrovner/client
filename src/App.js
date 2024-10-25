@@ -41,7 +41,7 @@ function App() {
             authorizationParams={{
               redirect_uri: window.location.origin,
               //audience: 'https://expenses-api', // Value in Identifier field for the API being called.
-              scope: 'openid profile email read:reports', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
+              scope: 'openid profile email', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
                   
             }}>   
             <Header />   
