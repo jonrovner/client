@@ -52,6 +52,7 @@ function App() {
               <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
               <Route path="/saml-login" element={<ProtectedRoute component={Profile} />} />
             </Routes>
+            <br></br>
             <LoginButton />
         </Auth0ProviderWithRedirectCallback>
       </BrowserRouter>

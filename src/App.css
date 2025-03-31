@@ -1,30 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #09282a; 
+ 
+}
+
 .App {
   height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #4A5D5E; 
+  background-color: #09282a; 
   align-items: center;
-  justify-content: space-evenly;
-  font-size: calc(10px + 2vmin);
-  
+  font-size: calc(12px + 2vmin);
+  padding: 2rem;
 }
 
-button{
-  padding: 0.25rem;
-  border: 1px solid black;
-  font-size: 0.5rem;
-  border-radius: 2px;
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
   background-color: #D2DBC8;
-  
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-a{
-  color: white;
+
+button:hover {
+  background-color: #B0C4A9;
 }
-p{
+
+a {
+  color: #F0F0E6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #E0E0D6;
+}
+
+p {
   color: #F8F8EC;
   font-style: italic;
-  font-size: 0.75rem;
-  max-width: 50vw;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 50%;
+  align-self: center;
+  text-align: center;
+  margin-left: 25%;
+}
+.projects {
+  text-align: center;
+  margin-top: 2rem;
+}
 
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.project-card {
+  background-color: #3A4A4B;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  color: #F8F8EC;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #D2DBC8;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #D2DBC8;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.headline {
+  text-align: center;
+  color: #F8F8EC;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.projects_title {
+  color:#D2DBC8
 }
