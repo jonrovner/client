@@ -12,7 +12,7 @@ const projects = [
   },
   {
     title: "Moonlo",
-    description: "A Datibg App based on astrology, built with React Native and Talk.js",
+    description: "A Dating App based on astrology, built with React Native and Talk.js",
     link: "https://github.com/jonrovner/moonlo-app",
     repo: "https://github.com/jonrovner/moonlo-app",
     image: moonlo
