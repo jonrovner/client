@@ -27,10 +27,15 @@ function Projects() {
         {projects.map((project, index) => (
           <div key={index} className="project-card">
              <img src={project.image} alt={project.title} className="project-image" />  
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Demo | </a>  
-            <a href={project.repo} target="_blank" rel="noopener noreferrer">|   GitHub</a>
+            <h3 className='project-title'>{project.title}</h3>
+            <p className='project-description'>{project.description}</p>
+            
+            <div className='project-links'>
+            <a className='project-link' href={project.link} target="_blank" rel="noopener noreferrer">Demo | </a>  
+            <a className='project-link' href={project.repo} target="_blank" rel="noopener noreferrer">|   GitHub</a>
+            </div>
+          
+          
           </div>
         ))}
       </div>
