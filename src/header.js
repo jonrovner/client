@@ -1,4 +1,3 @@
-import logo from './logo.png';
 import { Link } from 'react-router-dom';
 
 function Header() {

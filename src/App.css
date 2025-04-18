@@ -246,19 +246,19 @@ p {
 .cta-buttons button {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  background-color: var(--accent-color);
   color: var(--text-primary);
-  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
-.cta-buttons button:hover {
-  background-color: var(--hover-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+.cta-contact-button {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--text-primary);
 }
 
 .projects_title {
@@ -266,7 +266,6 @@ p {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  
   letter-spacing: 1px;
 }
 

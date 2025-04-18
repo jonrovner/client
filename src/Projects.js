@@ -5,7 +5,7 @@ import React from 'react';
 const projects = [
   {
     title: "MFA Dashboard",
-    description: "A dashboard for managing Multi-Factor Authentication factors.",
+    description: "A dashboard for Auth0's Multi-Factor Authentication factors.",
     link: "https://mfa-dashboard.vercel.app",
     repo: "https://github.com/jonrovner/mfa-dashboard",
     image: mfadash

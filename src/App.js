@@ -4,7 +4,6 @@ import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 
 import Profile from './profile';
 import Home from './home';
-import LoginButton from './login';
 import Header from './header';
 
 import {
