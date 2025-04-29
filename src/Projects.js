@@ -1,5 +1,6 @@
 import mfadash from './mfa-dash.png'
 import moonlo from './moonlo.png'
+import gather from './gather2.png'
 import React from 'react';
 
 const projects = [
@@ -16,6 +17,13 @@ const projects = [
     link: "https://github.com/jonrovner/moonlo-app",
     repo: "https://github.com/jonrovner/moonlo-app",
     image: moonlo
+  },
+  {
+    title: "Gather",
+    description: "A web app for creating and managing social events",
+    link: "https://gather-beryl.vercel.app/",
+    repo: "https://github.com/jonrovner/gather",
+    image: gather
   }
 ];
 

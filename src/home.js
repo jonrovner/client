@@ -23,7 +23,8 @@ function Home() {
       <div className="hero">
         <div className="headline">
           <h1>Jonathan Rovner</h1>
-          <h2>Full Stack Developer | Authentication & Access Control Specialist</h2>
+          <h2>Full Stack Developer</h2>
+          <h3>Authentication & Access Control Specialist</h3>
           <h3>Support Engineer</h3>
         </div>
         <div className="cta-buttons">
