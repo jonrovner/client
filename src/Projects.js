@@ -1,9 +1,24 @@
 import mfadash from './mfa-dash.png'
 import moonlo from './moonlo.png'
 import gather from './gather2.png'
+import autheroes from './autheroes.png'
 import React from 'react';
 
 const projects = [
+  {
+    title: "Juntadita",
+    description: "A web app for creating and managing social events",
+    link: "https://juntadita.com",
+    repo: "https://github.com/jonrovner/gather",
+    image: gather
+  },
+  {
+    title: "Autheroes",
+    description: "A consultancy to help with Auth0 implementations",
+    link: "https://autheroes.com",
+    repo: "https://github.com/jonrovner",
+    image: autheroes
+  },
   {
     title: "MFA Dashboard",
     description: "A dashboard for Auth0's Multi-Factor Authentication factors.",
@@ -18,13 +33,7 @@ const projects = [
     repo: "https://github.com/jonrovner/moonlo-app",
     image: moonlo
   },
-  {
-    title: "Juntadita",
-    description: "A web app for creating and managing social events",
-    link: "https://juntadita.com",
-    repo: "https://github.com/jonrovner/gather",
-    image: gather
-  }
+  
 ];
 
 function Projects() {
