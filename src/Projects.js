@@ -19,9 +19,9 @@ const projects = [
     image: moonlo
   },
   {
-    title: "Gather",
+    title: "Juntadita",
     description: "A web app for creating and managing social events",
-    link: "https://gather-beryl.vercel.app/",
+    link: "https://juntadita.com",
     repo: "https://github.com/jonrovner/gather",
     image: gather
   }
